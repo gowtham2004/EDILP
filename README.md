@@ -2,6 +2,7 @@
 An Intelligent Assistant for Lonley_Programmer
 
 hello soldiers!
+
     Iam creating a new type of automation system by using python to ease the work of doing bing searches.
 		Now we are entering a AI world with great one of the most useful part in AI is Automation though Automation is not a part of AI but it's like AI , an automation can bring you a cup of coffee huh! jokes apart.
     This is my first AI application made of python so i need to cover most of the utility based tools in python.
