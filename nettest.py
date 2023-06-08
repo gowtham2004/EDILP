@@ -1,15 +1,16 @@
-import subprocess
+import bluetooth
 
-def get_network_uid():
-    """Gets the current network user ID."""
-    command = ["netsh", "wlan", "show", "profile", "name=Wi-Fi", "key=ssid"]
-    output = subprocess.check_output(command)
-    ssid = output.decode("utf-8").strip()
-    command = ["netsh", "wlan", "show", "profile", ssid, "key=uid"]
-    output = subprocess.check_output(command)
-    uid = output.decode("utf-8").strip()
-    return uid
+def get_connected_bluetooth_device():
+    """Gets the current connected Bluetooth device."""
+    devices = bluetooth.discover_devices()
+    for device in devices:
+        if device["connected"]:
+            return device
+    return None
 
 if __name__ == "__main__":
-    uid = get_network_uid()
-    print(uid)
+    device = get_connected_bluetooth_device()
+    if device is not None:
+        print(device["name"])
+    else:
+        print("No connected Bluetooth device")
