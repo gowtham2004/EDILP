@@ -5,7 +5,7 @@ import time
 import os
 import platform
 
-user = [5,6,7,9,12,13,14,10,11,8,3]
+user = [5,6,7,9,12,13,14,10,11,8,3,17,15,16,18]
 file = open("log.txt","w")
 now = datetime.datetime.now()
 file.write("Log Date/time:"+str(now))
