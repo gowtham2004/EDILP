@@ -1,11 +1,10 @@
 import subprocess
 import pyautogui as gui
 import datetime
-import time
+import time as tt
 import os
-import platform
 
-user = [5,6,7,9,12,13,14,10,11,8,3,17,15,16,18]
+user = [5,6,7,9,12,13,14,10,11,8,3,17,15,16,18,19,20,21,22,4]
 file = open("log.txt","w")
 now = datetime.datetime.now()
 file.write("Log Date/time:"+str(now))
@@ -19,33 +18,33 @@ def run_automation(i):
     print("\n----------Initiated for acc no: "+str(i)+" ----------\n")
     file.write("\n----------Initiated for acc no: "+str(i)+" ----------\n")
 
-    print("time.sleep(3)\n")
-    time.sleep(3)
-    file.write("time.sleep(3)\n")
+    print("tt.sleep(3)\n")
+    tt.sleep(3)
+    file.write("tt.sleep(3)\n")
 
     print("gui.click(1731,60)\n")
     gui.click(1731,60)
     file.write("gui.click(1731,60)\n")
 
-    print("time.sleep(3)\n")
-    time.sleep(3)
-    file.write("time.sleep(3)\n")
+    print("tt.sleep(3)\n")
+    tt.sleep(3)
+    file.write("tt.sleep(3)\n")
 
-    print("gui.click(1554,672)\n")
-    gui.click(1554,672)
-    file.write("gui.click(1554,672)\n")
+    print("gui.click(1607,763)\n")
+    gui.click(1607,763)
+    file.write("gui.click(1607,763)\n")
 
-    print("time.sleep(40)\n")
-    time.sleep(40)
-    file.write("time.sleep(40)\n")
+    print("tt.sleep(40)\n")
+    tt.sleep(40)
+    file.write("tt.sleep(40)\n")
 
     print("gui.click(1434,17)\n")
     gui.click(1434,17)
     file.write("gui.click(1434,17)\n")
 
-    print("time.sleep(2)\n")
-    time.sleep(2)
-    file.write("time.sleep(2)\n")
+    print("tt.sleep(2)\n")
+    tt.sleep(2)
+    file.write("tt.sleep(2)\n")
 
     print("gui.keyDown('ctrl')\n")
     gui.keyDown('ctrl')
@@ -67,33 +66,33 @@ def run_automation(i):
     gui.keyUp('shift')
     file.write("gui.keyUp('shift')\n")
 
-    print("time.sleep(3)\n")
-    time.sleep(3)
-    file.write("time.sleep(3)\n")
+    print("tt.sleep(3)\n")
+    tt.sleep(3)
+    file.write("tt.sleep(3)\n")
 
     print("gui.click(1731,60)\n")
     gui.click(1731,60)
     file.write("gui.click(1731,60)\n")
 
-    print("time.sleep(3)\n")
-    time.sleep(3)
-    file.write("time.sleep(3)\n")
+    print("tt.sleep(3)\n")
+    tt.sleep(3)
+    file.write("tt.sleep(3)\n")
 
-    print("gui.click(1554,672)\n")
-    gui.click(1554,672)
-    file.write("gui.click(1554,672)\n")
+    print("gui.click(1604,767)\n")
+    gui.click(1604,767)
+    file.write("gui.click(1604,767)\n")
 
-    print("time.sleep(40)\n")
-    time.sleep(40)
-    file.write("time.sleep(40)\n")
+    print("tt.sleep(40)\n")
+    tt.sleep(40)
+    file.write("tt.sleep(40)\n")
 
     print("gui.click(1434,17)\n")
     gui.click(1434,17)
     file.write("gui.click(1434,17)\n")
 
-    print("time.sleep(2)\n")
-    time.sleep(2)
-    file.write("time.sleep(2)\n")
+    print("tt.sleep(2)\n")
+    tt.sleep(2)
+    file.write("tt.sleep(2)\n")
 
     print("gui.keyDown('ctrl')\n")
     gui.keyDown('ctrl')
@@ -115,33 +114,33 @@ def run_automation(i):
     gui.keyUp('shift')
     file.write("gui.keyUp('shift')\n")
 
-    print("time.sleep(2)\n")
-    time.sleep(2)
-    file.write("time.sleep(2)\n")
+    print("tt.sleep(2)\n")
+    tt.sleep(2)
+    file.write("tt.sleep(2)\n")
 
     print("gui.click(1680,58)\n")
     gui.click(1680,58)
     file.write("gui.click(1680,58)\n")
 
-    print("time.sleep(2)\n")
-    time.sleep(2)
-    file.write("time.sleep(2)\n")
+    print("tt.sleep(2)\n")
+    tt.sleep(2)
+    file.write("tt.sleep(2)\n")
 
     print("gui.click(1427,410)\n")
     gui.click(1427,410)
     file.write("gui.click(1427,410)\n")
 
-    print("time.sleep(20)\n")
-    time.sleep(20)
-    file.write("time.sleep(20)\n")
+    print("tt.sleep(20)\n")
+    tt.sleep(20)
+    file.write("tt.sleep(20)\n")
 
     print("gui.click(1283,0)\n")
     gui.click(1283,0)
     file.write("gui.click(1283,0)\n")
 
-    print("time.sleep(2)\n")
-    time.sleep(2)
-    file.write("time.sleep(2)\n")
+    print("tt.sleep(2)\n")
+    tt.sleep(2)
+    file.write("tt.sleep(2)\n")
 
     print("gui.keyDown('alt')\n")
     gui.keyDown('alt')
@@ -163,12 +162,18 @@ def dash():
     subprocess.Popen(["C:\Program Files\Windscribe\Windscribe.exe"])
     print("\n----------initiating vpn----------")
     file.write("\n----------initiating vpn----------")
-    time.sleep(10)
+    tt.sleep(10)
     for i in user:
         run_automation(i)
+    file.close()
+
+def shutdown_pc():
+  os.system("shutdown /s /t 0")
 
 
 time = now.strftime("%H")
 t = int(time)
 print(t)
-dash()
+if(t == 1):
+    dash()
+    shutdown_pc()
