@@ -178,7 +178,7 @@ def Activity(cid):
                 continue
             
             print("Sleep(20)")
-            tt.sleep(20)
+            tt.sleep(30)
             
 
             print("gui.keyDown('ctrl')\n")
@@ -213,15 +213,15 @@ def dash():
     #subprocess.Popen(["C:\Program Files\Windscribe\Windscribe.exe"])
     #print("\n----------initiating vpn----------")
     #tt.sleep(10)
-    #for i in select:
-    #   search(i)
     for i in user:
-        Activity(i)
+       search(i)
+    for i in user:
+       Activity(i)
 
 def shutdown_pc():
   os.system("shutdown /s /t 0")
 
 #os.system("shutdown /s /t 7200")
-print("shutdown timer set hogaya")
+#print("shutdown timer set hogaya")
 dash()
 shutdown_pc()
